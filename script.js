@@ -176,4 +176,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ── Email Obfuscation ───────────────────────
+    // Email is base64-encoded in data attributes to prevent bot scraping
+    const emailLinks = document.querySelectorAll('.email-link');
+
+    emailLinks.forEach(link => {
+        const encoded = link.getAttribute('data-email');
+        if (!encoded) return;
+
+        const decoded = atob(encoded);
+
+        // Set the mailto href
+        link.setAttribute('href', 'mailto:' + decoded);
+
+        // If contact card, show email text on hover
+        const emailText = link.querySelector('.email-text');
+        if (emailText) {
+            emailText.textContent = decoded;
+        }
+    });
+
 });
