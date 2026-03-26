@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Typing Effect ───────────────────────────
     const roles = [
-        'Senior Software Engineer',
+        'Senior Application Support Engineer',
         'Cloud Migration Expert',
-        'Production Support Specialist',
-        'DevOps Practitioner',
-        'Database & SQL Expert'
+        'Incident Management Expert',
+        'SQL & Database Specialist',
+        'DevOps Practitioner'
     ];
 
     const typingEl = document.getElementById('typingText');
